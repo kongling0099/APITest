@@ -1,0 +1,141 @@
+{
+	"variables": [],
+	"info": {
+		"name": "test1",
+		"_postman_id": "7f302972-d922-f47a-d2d5-0cac13035c3b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "一个测试接口",
+			"request": {
+				"url": {
+					"raw": "http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=接口&bk_length=600",
+					"protocol": "http",
+					"host": [
+						"baike",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"api",
+						"openapi",
+						"BaikeLemmaCardApi"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "103",
+							"equals": true
+						},
+						{
+							"key": "format",
+							"value": "json",
+							"equals": true
+						},
+						{
+							"key": "appid",
+							"value": "379020",
+							"equals": true
+						},
+						{
+							"key": "bk_key",
+							"value": "接口",
+							"equals": true
+						},
+						{
+							"key": "bk_length",
+							"value": "600",
+							"equals": true
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "http://suggest.taobao.com/sug?code=utf-8&q=商品关键字&callback=cb",
+			"request": {
+				"url": {
+					"raw": "http://suggest.taobao.com/sug?code=utf-8&q=商品关键字&callback=cb",
+					"protocol": "http",
+					"host": [
+						"suggest",
+						"taobao",
+						"com"
+					],
+					"path": [
+						"sug"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "utf-8",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "q",
+							"value": "商品关键字",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "callback",
+							"value": "cb",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/getuser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"code值检查是否等于200\"] = jsonData.code === 200;",
+							"",
+							"",
+							"tests[\"age返回是否是18\"] = jsonData.age === 26;"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log('Collection Pre-request script')"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "localhost:8081/getuser",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
