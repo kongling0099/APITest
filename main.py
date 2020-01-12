@@ -1,4 +1,11 @@
 # 定义一个测试脚本
 from logzero import logger
+from flask import Flask
+app =Flask(__name__)
 
-logger.info('这是我的测试程序，哈哈')
+@app.route('/')
+def hello_world():
+    return 'Hello World'
+
+if __name__ == '__main__':
+    app.run()
