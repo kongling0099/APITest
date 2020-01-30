@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from kongling.common import request
+from application import request
 import unittest
 from logzero import logger
 
